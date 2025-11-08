@@ -21,8 +21,15 @@ A beginner-friendly Django REST Framework backend for an online store. This proj
   - Configured admin interface with filters and inline editing
   - Related to Category with ForeignKey relationship
 
+- ✅ **Step 3: User Authentication**
+  - Created accounts app for user management
+  - Implemented user registration with custom form (username, email, first_name, last_name, password)
+  - Set up login and logout functionality
+  - Created profile view for authenticated users
+  - Built simple HTML templates for registration, login, and profile pages
+  - Configured authentication settings (LOGIN_URL, LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL)
+
 ### In Progress
-- Step 3: User authentication
 - Step 4: Shopping cart
 - Step 5: Order management
 - Step 6: REST API endpoints
@@ -31,7 +38,8 @@ A beginner-friendly Django REST Framework backend for an online store. This proj
 
 ### Apps
 - **catalog**: Product catalog management (categories, products)
-- More apps will be added for cart, orders, and user management
+- **accounts**: User authentication and profile management
+- More apps will be added for cart and orders
 
 ### Models
 **Category** (`catalog/models.py`)

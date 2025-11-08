@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile - Online Store</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <p><strong>{{ message }}</strong></p>
+        {% endfor %}
+    {% endif %}
+    
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Name:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+    <p><strong>Date Joined:</strong> {{ user.date_joined }}</p>
+    
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+</body>
+</html>
