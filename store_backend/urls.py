@@ -9,6 +9,7 @@ def home_view(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('store_backend.api_urls')),
     path('accounts/', include('accounts.urls')),
     path('cart/', include('cart.urls')),
     path('orders/', include('orders.urls')),

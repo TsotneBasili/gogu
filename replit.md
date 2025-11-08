@@ -46,8 +46,28 @@ A beginner-friendly Django REST Framework backend for an online store. This proj
   - Configured admin interface with inline order items and status editing
   - Order creation clears cart automatically after successful placement
 
-### In Progress
-- Step 6: REST API endpoints
+- ✅ **Step 6: REST API Endpoints**
+  - Created serializers for all models (Category, Product, Cart, CartItem, Order, OrderItem, User)
+  - Implemented ViewSets with filtering, searching, and ordering capabilities
+  - Category API: Read-only access with product count
+  - Product API: Read-only access with category filter, color/material filters, search, and ordering
+  - Cart API: Full CRUD with add_item, remove_item, and clear actions
+  - Order API: List, detail, and create with automatic cart-to-order conversion
+  - User API: Read-only access to current user profile
+  - Configured REST Framework with session and basic authentication
+  - All API endpoints available at /api/
+
+## API Endpoints Summary
+- **GET /api/categories/** - List all active categories
+- **GET /api/products/** - List all available products (with filters: category, color, material, featured)
+- **GET /api/cart/** - View user's cart
+- **POST /api/cart/{id}/add_item/** - Add product to cart
+- **POST /api/cart/{id}/remove_item/** - Remove item from cart
+- **POST /api/cart/{id}/clear/** - Clear entire cart
+- **GET /api/orders/** - List user's orders
+- **POST /api/orders/** - Create order from cart
+- **GET /api/orders/{id}/** - View order details
+- **GET /api/users/** - View current user profile
 
 ## Project Architecture
 
