@@ -14,8 +14,14 @@ A beginner-friendly Django REST Framework backend for an online store. This proj
   - Pre-populated database with 9 default furniture categories
   - Server running on port 5000
 
+- ✅ **Step 2: Product Model**
+  - Created Product model with all required fields
+  - Added color choices (10 options: black, white, brown, gray, beige, blue, red, green, natural wood, other)
+  - Added material choices (8 options: wood, metal, plastic, glass, fabric, leather, composite, other)
+  - Configured admin interface with filters and inline editing
+  - Related to Category with ForeignKey relationship
+
 ### In Progress
-- Step 2: Product model with attributes (color, material)
 - Step 3: User authentication
 - Step 4: Shopping cart
 - Step 5: Order management
@@ -32,6 +38,13 @@ A beginner-friendly Django REST Framework backend for an online store. This proj
 - Fields: name, slug, description, image, is_activated, created_at
 - Methods: `__str__()`, `get_absolute_url()`
 - Admin: Registered with search, filters, and prepopulated slugs
+
+**Product** (`catalog/models.py`)
+- Fields: name, slug, category (FK), description, price, stock, is_available, featured, color, material, created_at, updated_at
+- Color choices: Black, White, Brown, Gray, Beige, Blue, Red, Green, Natural Wood, Other
+- Material choices: Wood, Metal, Plastic, Glass, Fabric, Leather, Composite, Other
+- Methods: `__str__()`, `get_absolute_url()`
+- Admin: Registered with filters by category, availability, featured status, color, material; inline editing for price, stock, availability, featured
 
 ### Default Categories
 The database is pre-populated with:
