@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Order - Online Store</title>
+</head>
+<body>
+    <h1>Create Order</h1>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <p><strong>{{ message }}</strong></p>
+        {% endfor %}
+    {% endif %}
+    
+    <h3>Order Summary</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart.items.all %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>${{ item.product.price }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ item.get_total_price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <h3>Total Items: {{ cart.get_total_items }}</h3>
+    <h3>Total Price: ${{ cart.get_total_price }}</h3>
+    
+    <h3>Shipping Information</h3>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label for="shipping_address">Shipping Address:*</label><br>
+            <textarea name="shipping_address" id="shipping_address" rows="4" cols="50" required></textarea>
+        </p>
+        <p>
+            <label for="notes">Notes (optional):</label><br>
+            <textarea name="notes" id="notes" rows="3" cols="50"></textarea>
+        </p>
+        <button type="submit">Place Order</button>
+    </form>
+    
+    <p><a href="{% url 'cart_view' %}">Back to Cart</a></p>
+</body>
+</html>

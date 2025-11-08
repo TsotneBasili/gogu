@@ -37,8 +37,16 @@ A beginner-friendly Django REST Framework backend for an online store. This proj
   - Configured admin interface with inline cart items
   - All cart operations require user authentication
 
+- ✅ **Step 5: Order Management**
+  - Created orders app for order processing
+  - Implemented Order and OrderItem models with status tracking
+  - Order status choices: pending, processing, shipped, delivered, cancelled
+  - Built order views: list orders, view order details, create order from cart
+  - Created order templates for listing, details, and checkout
+  - Configured admin interface with inline order items and status editing
+  - Order creation clears cart automatically after successful placement
+
 ### In Progress
-- Step 5: Order management
 - Step 6: REST API endpoints
 
 ## Project Architecture
@@ -47,7 +55,7 @@ A beginner-friendly Django REST Framework backend for an online store. This proj
 - **catalog**: Product catalog management (categories, products)
 - **accounts**: User authentication and profile management
 - **cart**: Shopping cart management with add, remove, update, and clear operations
-- More apps will be added for orders
+- **orders**: Order management with status tracking and order history
 
 ### Models
 **Category** (`catalog/models.py`)
