@@ -29,8 +29,15 @@ A beginner-friendly Django REST Framework backend for an online store. This proj
   - Built simple HTML templates for registration, login, and profile pages
   - Configured authentication settings (LOGIN_URL, LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL)
 
+- ✅ **Step 4: Shopping Cart**
+  - Created cart app for shopping cart management
+  - Implemented Cart and CartItem models
+  - Built cart views: view cart, add to cart, remove from cart, update quantity, clear cart
+  - Created cart template with item listing and total calculations
+  - Configured admin interface with inline cart items
+  - All cart operations require user authentication
+
 ### In Progress
-- Step 4: Shopping cart
 - Step 5: Order management
 - Step 6: REST API endpoints
 
@@ -39,7 +46,8 @@ A beginner-friendly Django REST Framework backend for an online store. This proj
 ### Apps
 - **catalog**: Product catalog management (categories, products)
 - **accounts**: User authentication and profile management
-- More apps will be added for cart and orders
+- **cart**: Shopping cart management with add, remove, update, and clear operations
+- More apps will be added for orders
 
 ### Models
 **Category** (`catalog/models.py`)
