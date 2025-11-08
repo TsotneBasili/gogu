@@ -1,0 +1,79 @@
+You are my coding helper.  
+Help me build a **simple Django project** for an **online store backend** step by step, just like a beginner developer would do it.
+
+Project details:
+----------------
+Framework: Django + Django REST Framework  
+Goal: Create a backend for an online store with:
+- Product catalog (products and categories)
+- User registration and authentication
+- Shopping cart
+- Order management
+
+I want the project to be small, clean, and beginner-friendly — no complex setup.  
+Use clear explanations and show me exactly what to type or paste in each file.
+
+---
+
+🪜 STEP-BY-STEP GUIDE
+--------------------
+We'll build the project in steps.  
+Each step should include:
+1. What we are doing and why.  
+2. The exact terminal commands to run (for example: `django-admin startproject store_backend`).  
+3. The code to copy into files (like `models.py`, `views.py`, etc).  
+4. Short explanation of what the code does.  
+5. How to test or check that it works.
+
+---
+
+✅ Step 1 (Start Here): Create the Category model
+------------------------------------------------
+Let’s start by:
+- Creating the Django project and an app called `catalog`
+- Making the first model: `Category`
+- Setting up Django admin to manage it
+- Making and applying migrations
+- Adding some default categories
+
+The **Category** model should have these fields:
+- `name` (CharField, max_length=255)
+- `slug` (SlugField, unique, used in URLs)
+- `description` (TextField, optional)
+- `image` (ImageField, optional)
+- `is_activated` (BooleanField, default=True)
+- `created_at` (DateTimeField, auto_now_add=True)
+
+It should also have:
+- `__str__` method that returns the category name  
+- `get_absolute_url()` method that uses the slug
+
+After migrations, it should automatically have these **default categories** in the database:
+- chair  
+- sofa  
+- table  
+- wardrobe  
+- bed  
+- cabinet  
+- shelf  
+- armchair  
+- outdoor furniture
+
+Show me how to:
+- create the project and app
+- write the model
+- register it in `admin.py`
+- create the migration and add default data
+- check in admin panel that categories exist
+
+Once Step 1 is done and confirmed working, you will continue with:
+Step 2 → Product model  
+Step 3 → User registration and login  
+Step 4 → Cart  
+Step 5 → Orders  
+Step 6 → Simple REST API for all of them
+
+Keep everything simple and beginner-friendly.  
+Avoid too many files or complex settings — just make it work clearly and cleanly.
+
+Start now with **Step 1: Create Category model**.
